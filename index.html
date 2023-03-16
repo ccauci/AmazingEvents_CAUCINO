@@ -15,12 +15,12 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><img src="../asset/img/Logo_Amazing_Events.png" alt="Logo" width="80"
             height="24"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="nav justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="nav justify-content-end collapse navbar-collapse show" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
@@ -60,7 +60,7 @@
       </div>
     </main>
     <nav class="navbar bg-body-tertiary">
-      <div class="container">
+      <div id= "checkboxContainer" class="container">
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
           <label class="form-check-label" for="inlineCheckbox1">Tourist Packages</label>
@@ -93,10 +93,26 @@
         </div>
       </div>
     </nav>
-    <div class="card-tod d-flex flex-wrap gap-3 justify-content-center">
+    <div id="contenedor" class="card-tod d-flex flex-wrap gap-3 justify-content-center p-3">
+      
+         <!-- <div class="card card h-200" style="width: 18rem;">
+          <img src="../asset/img/Cinema.jpg" class="card-img-top img-fluid card rounded h-200 w-300" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">5D Cinema</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.</p> </div>
+            <div class="card-footer d-flex justify-content-between gap-1 align-items-center">
+              <p class=" align-self-center mt-1">Price $ </p>
+              <p class="card-price align-self-center mt-1"></p>
+              <a href="./pages/details.html" class="btn btn-primary">Details</a>
+            </div>
+          </div> -->
+        
+    <!-- </div> -->
+    <!-- <div class="card-tod d-flex flex-wrap gap-3 justify-content-center p-3">
       <template class="plantilla">
         <div class="card card h-200" style="width: 18rem;">
-          <img src="../asset/img/Cinema.jpg" class="card-img-top card" alt="...">
+          <img src="../asset/img/Cinema.jpg" class="card-img-top img-fluid card rounded h-200 w-300" alt="...">
           <div class="card-body">
             <h5 class="card-title">5D Cinema</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -108,7 +124,7 @@
             </div>
           </div>
       </template>
-    </div>
+    </div> -->
     <!-- <div class="card card h-80" style="width: 18rem;">
         <img src="../asset/img/Costume_Party.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -147,10 +163,10 @@
                 class="btn btn-primary">Details</a>
         </div>
         </div>
-      </div>
-    </div> -->
+      </div>-->
+    </div> 
 <footer>
-    <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark p-1">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-1 mt-3">
       <div class="container-fluid justify-content-sm-end d-inline-block">
       <button class="btn btn-outline-success">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -168,6 +184,7 @@
         </svg>
       </button>
       </div>
+      <p class="m-0 text-center text-white text-nowrap">&copy; by Carolina Caucino.</p>
       <div class="container-fluid justify-content-end">
       <a class="navbar-brand " href="#">Cohort FE11-TM</a>
       </div>

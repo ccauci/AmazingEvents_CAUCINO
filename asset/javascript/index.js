@@ -1,23 +1,44 @@
 import data from "./amazing.js";
 
-const fecha = data.currentDate;
+import {drawCard} from "./function.js";
 
-let { events } = data;
+let contenedor = document.getElementById("contenedor");
+drawCard(data.events, contenedor);
+createChecks(data.events);
 
-const template = document.querySelector(".plantilla").content; 
-const padre = document.querySelector(".card-tod"); 
-const fragment = document.createDocumentFragment();
+const input = document.querySelector('(".form-control me-2")')
 
-events.forEach(event => {
+//funcion que busca por texto
+function textFilter(array, name){
+    let arrFiltered = array.filter(elemento => elemento.name.tolowerCase().includes(name.tolowerCase()))
+    return arrFiltered
+}
 
-template.querySelector(".card-title").textContent = event.name; 
-template.querySelector(".card-text").textContent = event.description;
-template.querySelector(".card-img-top").src = event.image;
-template.querySelector(".card-price").textContent = event.price;
+input.addEventListener('input', () =>{
+    let textFiltered = textFilter(data.events, input.value);
+    let categFiltered = categFilter(textFiltered)
+    drawCard(categFiltered, contenedor);
+})
+ const containerCheck = document.getElementById('checkboxContainer')
 
-const copia = template.cloneNode(true);
-fragment.appendChild(copia);
+ //funcion que filtra las categorias en checkboxes y retorna a un arreglo de eventos filtrados
+function categFilter(eventosCateg){
+    let checkboxes = document.querySelectorAll("input[type='checkbox']")
+    let arrChecks = Array.from(checkboxes)
+    let arrChecksCateg = arrChecks.filter(check => check.checked)
+    let arrChecksCategValues = arrChecksCateg.map(checkChecked => checkChecked.value)
+    let arrFiltrado = eventosCateg.filter(elemento => arrChecksCategValues.includes(elemento.category))
+    if (arrChecksCateg.length > 0) {
+        return arrFiltrado
+    }
+    return eventosCateg
+}   
+
+containerCheck.addEventListener('change', () => {
+    let textFiltered = textFilter(data.events, input.value);
+    let categFilter = categFilter(textFiltered)
+    drawCard(categFilter, contenedor);
 
 })
 
-padre.appendChild(fragment);
+
