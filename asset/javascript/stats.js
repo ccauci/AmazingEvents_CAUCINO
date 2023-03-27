@@ -9,7 +9,7 @@ async function getEventos(){
             showAttendanceStatistics(eventosList);
             showRevenueStatistics(eventosList); 
     })
-}
+} getEventos()
 
 function highestPercentageAttendance(eventosList) {
   let highest = eventosList[0];
@@ -117,13 +117,6 @@ function calculatorPercentageAttendance(array){
 
 
 
-window.addEventListener('load', () => {
-  getEventos().then(eventosList => {
-    
-    showAttendanceStatistics(eventosList);
-    showRevenueStatistics(eventosList);
-  })
-});
 
 
 
