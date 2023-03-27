@@ -70,28 +70,30 @@
       </div>
     </main>    
     <div class="table-responsive">
-    <table class="table table-bordered d-flex container-fluid justify-content-center align-items-center flex-column" style="height: 450px;">
+    <table id="tableEvents" class="table table-bordered d-flex container-fluid justify-content-center align-items-center flex-column" style="height: 450px;">
       <tbody>        
        <tr>
           <th colspan="3">Events statistics</th>
         </tr>  
         <tr>
-          <td>Events with the highest percentage of attendance</td>
-          <td>Events with the lowest percentage of attendance</td>
-          <td>Event with larger capacity</td>
+          <td width="308">Events with the highest percentage of attendance</td>
+          <td width="308">Events with the lowest percentage of attendance</td>
+          <td width="308">Event with larger capacity</td>
         </tr>
         <tr>
           <td></td>     
           <td></td>           
           <td></td>            
         </tr>
-         <tr>
+      </tbody>
+        <tbody> 
+          <tr>
           <th colspan="3">Upcoming events statistics by category</th>
         </tr>
         <tr>          
-          <td>Categories</td>
-          <td>Revenues</td>
-          <td>Percentage of attendance</td>
+          <td width="308">Categories</td>
+          <td width="308">Revenues</td>
+          <td width="308">Percentage of attendance</td>
         </tr>
         <tr>
           <td></td>
@@ -107,14 +109,16 @@
           <td></td>
           <td></td>
           <td></td>
-        </tr>       
+        </tr>
+      </tbody>    
+       <tbody> 
         <tr>
           <th colspan="3">Past Events statistic by category</th>
         </tr>
         <tr>        
-          <td>Categories</td>
-          <td>Revenues</td>
-          <td>Percentage of attendance</td>
+          <td width="308">Categories</td>
+          <td width="308">Revenues</td>
+          <td width="308">Percentage of attendance</td>
         </tr>
         <tr>          
           <td></td>
@@ -174,5 +178,6 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="../asset/javascript/stats.js"></script>
   </body>
 </html>
