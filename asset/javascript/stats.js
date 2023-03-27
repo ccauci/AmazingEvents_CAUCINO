@@ -117,11 +117,9 @@ function calculatorPercentageAttendance(array){
 
 
 
-
-// Obtener los eventos al cargar la página
 window.addEventListener('load', () => {
   getEventos().then(eventosList => {
-    // Los datos han sido obtenidos, mostrarlos en la interfaz
+    
     showAttendanceStatistics(eventosList);
     showRevenueStatistics(eventosList);
   })
