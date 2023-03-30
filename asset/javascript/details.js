@@ -18,10 +18,10 @@ function createDetails(item, contenedor){
     let details = document.createElement('div');
     details.classList.add('detail')
     details.innerHTML =`<div class="row g-1">
-    <div class="col-5 col-sm-7">
-      <img src="${item.image}" class="img-fluid w-100 img-thumbnail" alt="card-horizontal-image">
+    <div class="col-1 col-sm-3">
+      <img src="${item.image}" class="card-img-top img-fluid w-100 img-thumbnail" alt="card-horizontal-image">
     </div>
-    <div class="col-7 col-sm-5">
+    <div class="col-7 col-sm-9">
       <div class="card-body img-thumbnail">
         <h5 class="card-title">${item.name}</h5>
         <p class="card-text">${item.description}</p>               
