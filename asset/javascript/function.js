@@ -66,70 +66,73 @@ function filtrarCategoria(array){
   return array
 }
 
-function lowestPercentageAttendance(array) {
-  let eventsWithLowestAttendance = "";
-  let lowestAttendancePercentage = 101;
-  array.forEach((event) => {
-      const percentage = ((event.assistance ? event.assistance : event.estimate)/ event.capacity) * 100;
-      if (percentage < lowestAttendancePercentage) {
-          lowestAttendancePercentage = percentage;
-          eventsWithLowestAttendance = event.name;
-      } 
-  });
-  return eventsWithLowestAttendance;
-}
 
-function highestPercentageAttendance(array) {
-  let eventsWithhighestAttendance = "";
-  let highestPercentageAttendance = 50;
-  array.forEach((event) => {
-      const percentage = ((event.assistance ? event.assistance : event.estimate)/ event.capacity) * 100;
-      if (percentage > highestPercentageAttendance) {
-        highestPercentageAttendance = percentage;
-          eventsWithhighestAttendance = event.name;
-      } 
-  });
-  return eventsWithhighestAttendance;
-}
 
-function categories(array) {
-  let categoriesList = array.map(evento => evento.category);
-  let uniqueCategoriesList = [...new Set(categoriesList)];
-  return uniqueCategoriesList.join(", ");
+
+// function lowestPercentageAttendance(array) {
+//   let eventsWithLowestAttendance = "";
+//   let lowestAttendancePercentage = 101;
+//   array.forEach((event) => {
+//       const percentage = ((event.assistance ? event.assistance : event.estimate)/ event.capacity) * 100;
+//       if (percentage < lowestAttendancePercentage) {
+//           lowestAttendancePercentage = percentage;
+//           eventsWithLowestAttendance = event.name;
+//       } 
+//   });
+//   return eventsWithLowestAttendance;
+// }
+
+// function highestPercentageAttendance(array) {
+//   let eventsWithhighestAttendance = "";
+//   let highestPercentageAttendance = 50;
+//   array.forEach((event) => {
+//       const percentage = ((event.assistance ? event.assistance : event.estimate)/ event.capacity) * 100;
+//       if (percentage > highestPercentageAttendance) {
+//         highestPercentageAttendance = percentage;
+//           eventsWithhighestAttendance = event.name;
+//       } 
+//   });
+//   return eventsWithhighestAttendance;
+// }
+
+// function categories(array) {
+//   let categoriesList = array.map(evento => evento.category);
+//   let uniqueCategoriesList = [...new Set(categoriesList)];
+//   return uniqueCategoriesList.join(", ");
   
-}
+// }
 
-function revenues(eventosList) {
-  let totalRevenues = 0;
-  for (let evento of eventosList) {
-    for (let ticket of evento.tickets) {
-      totalRevenues += ticket.price * ticket.soldTickets;
-    }
-  }
-  return totalRevenues.toFixed(2);
-}
+// function revenues(eventosList) {
+//   let totalRevenues = 0;
+//   for (let evento of eventosList) {
+//     for (let ticket of evento.tickets) {
+//       totalRevenues += ticket.price * ticket.soldTickets;
+//     }
+//   }
+//   return totalRevenues.toFixed(2);
+// }
 
-function attendance(eventosList) {
-  let totalAttendance = 0;
-  eventosList.forEach(evento => {
-    totalAttendance += evento.asistentes;
-  });
-  return totalAttendance;
-}
+// function attendance(eventosList) {
+//   let totalAttendance = 0;
+//   eventosList.forEach(evento => {
+//     totalAttendance += evento.asistentes;
+//   });
+//   return totalAttendance;
+// }
 
-  function calculateProjectedTotalRevenue(eventosList) {
-  let projectedTotalRevenue = 0;
-  for (let evento of eventosList) {
-    for (let ticket of evento.tickets) {
-      const soldTickets = ticket.soldTickets || 0;
-      const price = ticket.price;
-      projectedTotalRevenue += price * soldTickets;
-    }
-  }
-  return `$${projectedTotalRevenue.toFixed(2)}`;
-}
+//   function calculateProjectedTotalRevenue(eventosList) {
+//   let projectedTotalRevenue = 0;
+//   for (let evento of eventosList) {
+//     for (let ticket of evento.tickets) {
+//       const soldTickets = ticket.soldTickets || 0;
+//       const price = ticket.price;
+//       projectedTotalRevenue += price * soldTickets;
+//     }
+//   }
+//   return `$${projectedTotalRevenue.toFixed(2)}`;
+// }
 
-export { pintarCard, createCheckboxes,filtroCombinado,filtrarPorTexto,filtrarCategoria, lowestPercentageAttendance, highestPercentageAttendance, categories, revenues,attendance,calculateProjectedTotalRevenue}
+export { pintarCard, createCheckboxes,filtroCombinado,filtrarPorTexto,filtrarCategoria }
 
 
 
